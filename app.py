@@ -67,7 +67,7 @@ def results():
     query['total_results'] = len(docs)
         
     page, per_page, offset = get_page_args(page_parameter='page', per_page_parameter='per_page')
-    per_page = RESULTS_PER_PAGE;
+    per_page = RESULTS_PER_PAGE
     offset = (page - 1) * per_page
     total = len(docs)
     pagination_users = get_users(docs, offset=offset, per_page=per_page)

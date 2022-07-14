@@ -37,7 +37,8 @@ class Crawler():
 
         print("robots found and appended in disallowed_links...")
 
-        self.crawl(url, depth, self.disallowed_links)
+        self.crawl(url, depth, *self.disallowed_links)
+        self.client.close()
 
     def crawl(self, url, depth, *disallowed_links):
 
@@ -97,8 +98,6 @@ class Crawler():
             except KeyError:
                 print("no links retrieved from the page")
                 pass
-
-        self.client.close()
 
 
 spider = Crawler()
